@@ -13,6 +13,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
+echo "Build directory is $BUILD_DIR"
 echo "Cache directory is $CACHE_DIR"
 
 # include .files when moving things around
