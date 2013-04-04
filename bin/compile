@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+echo "Cache directory is $CACHE_DIR"
+
 # fail fast
 set -e
 
