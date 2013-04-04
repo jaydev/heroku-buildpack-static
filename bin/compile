@@ -7,7 +7,7 @@ echo "Cache directory is $CACHE_DIR"
 set -e
 
 # config
-APACHE_VERSION="2.2.19"
+APACHE_VERSION="2.2.24"
 APACHE_PATH="apache"
 
 BIN_DIR=$(dirname $0)
@@ -40,7 +40,7 @@ done
 
 # install apache if needed
 if [ ! -d $APACHE_PATH ]; then
-  APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
+  APACHE_URL="https://s3.amazonaws.com/orzata/httpd-$APACHE_VERSION.tar.gz"
   echo "-----> Bundling Apache v$APACHE_VERSION"
   curl --silent --max-time 60 --location $APACHE_URL | tar xz
 fi
@@ -64,8 +64,11 @@ EOF
 chmod +x boot.sh
 
 # repack cache
-mkdir -p $CACHE_DIR
-for DIR in $APACHE_PATH ; do
-  rm -rf $CACHE_DIR/$DIR
-  cp -R $DIR $CACHE_DIR/$DIR
-done
+# mkdir -p $CACHE_DIR
+# for DIR in $APACHE_PATH ; do
+#   rm -rf $CACHE_DIR/$DIR
+#   cp -R $DIR $CACHE_DIR/$DIR
+# done
+
+# clean the cache
+rm -rf $CACHE_DIR
