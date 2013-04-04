@@ -2,5 +2,5 @@
 # bin/detect <build-dir>
 
 # Nothing is required
-
+echo "Cache directory is $BUILD_DIR"
 echo "Static"
